@@ -1,0 +1,29 @@
+<div mat-dialog>
+
+  <div class="col-2 ms-auto d-flex justify-content-end">
+    <button class="crc-icon crc-icon--type-time txt-primary" mat-dialog-close>
+      <i class="fa-light fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="col-md-12 mb-2">
+    <div class="mb-4 d-flex justify-content-center crc-icon--modal">
+      <i [class]="data.icon"></i>
+    </div>
+  </div>
+
+  <div class="col-8 mx-auto mb-2">
+    <h2 class="heading-02 text-center mb-4">
+      {{data.title}}
+    </h2>
+  </div>
+
+  <div class="col-md-12 mb-2" [innerHTML]="data.html">
+  </div>
+
+  <div class="col-md-12 col-lg-6 offset-lg-3">
+    <button id="btn_confirm_button" class="crc-button crc-button--primary w-100"
+      (click)="closeDialog(true)">{{data.buttonText}}</button>
+  </div>
+
+</div>

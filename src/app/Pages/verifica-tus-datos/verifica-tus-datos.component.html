@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 px-0 col-lg-6 mt-5 mx-auto">
+      <div class="row mx-auto">
+
+        <div class="col-md-12 mb-2">
+          <img src="assets/img/Logo-Izipay-solo.png" alt="logo izipay" class="d-block mx-auto" height="80">
+        </div>
+
+        <div class="col-12">
+          <h1 class="mb-0">
+            <strong>Verifica tus datos</strong>
+          </h1>
+          <p class="text-secondary">
+            Para iniciar tu pago a cuotas
+          </p>
+        </div>
+
+        <form class="col-12" [formGroup]="form">
+          <div class="bynw-card-id position-relative shadow p-4 mb-4" [ngClass]="{'d-none': frontOrBack}">
+
+            <ng-container formGroupName="front">
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-12 mb-2">
+                      <div class="d-flex align-items-center ">
+                        <div style="width: 32px; height: 1.125rem; background-color: #FB933C;"
+                          class="rounded-pill me-1">
+
+                        </div>
+                        <div style="width: 15rem; height: 1.125rem;background-color: #FFD7AB;" class="rounded-pill">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <div style="width: 11.25rem; height: 1.125rem;background-color: #FFD7AB;" class="rounded-pill">
+
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <mat-form-field class="izi-white w-100">
+                        <mat-label>Número de documento</mat-label>
+                        <input matInput type="text" formControlName="documentNumber" class="text-white">
+                        <button *ngIf="documentNumber?.value" matSuffix mat-icon-button aria-label="Clear">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                      <mat-form-field class="izi-white w-100">
+                        <mat-label>Tu primer apellido</mat-label>
+                        <input matInput type="text" formControlName="surname" class="text-white">
+                        <button *ngIf="surname?.value" matSuffix mat-icon-button aria-label="Clear">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-center">
+                  <div style="border: 0.25rem solid #F59F5C; background-color: #FEDAC0; width: 4rem; height: 4rem;"
+                    class="rounded text-white d-flex align-items-center justify-content-center">
+                    <fa-icon [icon]="['fas','user']" style="font-size: 3rem;"></fa-icon>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+          </div>
+          <div class="bynw-card-id position-relative shadow p-4 mb-4" [ngClass]="{'d-none': !frontOrBack}">
+
+            <ng-container formGroupName="back">
+              <div class="row">
+
+                <div class="col-auto d-flex align-items-center justify-content-center">
+                  <div
+                    style="border: 0.25rem solid #F59F5C; background-color: #FEDAC0; width: 4rem; height: 4rem; font-size: 2.5rem;"
+                    class="rounded d-flex align-items-center justify-content-center">
+                    <fa-icon [icon]="['fas','fingerprint']" style="color: #F59F5C;"></fa-icon>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="row">
+                    <div class="col-12 mb-2">
+                      <div class="d-flex align-items-center ">
+                        <div style="width: 32px; height: 1.125rem; background-color: #FB933C;"
+                          class="rounded-pill me-1">
+
+                        </div>
+                        <div style="width: 15rem; height: 1.125rem;background-color: #FFD7AB;" class="rounded-pill">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-2">
+                      <div style="width: 11.25rem; height: 1.125rem;background-color: #FFD7AB;" class="rounded-pill">
+
+                      </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <div style="width: 7.5rem; height: 1.125rem;background-color: #FFD7AB;" class="rounded-pill">
+
+                      </div>
+                    </div>
+                    <div class="col-12 mb-2">
+                      <mat-form-field class="w-100 izi-white">
+                        <mat-label>Fecha de expedición</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="día/mes/año"
+                          formControlName="expeditionDate" class="text-white" (click)="picker.open()"
+                          (focus)="picker.open()">
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                          <mat-icon matDatepickerToggleIcon class="text-white">keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="w-100 rounded" style="background-color: #FB933C; height: 4rem;">
+
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+          </div>
+        </form>
+
+
+        <div class="col-md-12 col-lg-6 mx-auto mb-5">
+          <button class="w-100 rounded-pill" mat-raised-button color="primary" (click)="next()">Continuar</button>
+          <ng-container *ngIf="frontOrBack">
+            <button class="w-100 rounded-pill" mat-button color="primary"
+              (click)="frontOrBack = !frontOrBack">Atrás</button>
+          </ng-container>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-5 mx-auto">
+      <div class="row mx-auto">
+
+        <div class="col-md-12 mb-2">
+          <img src="assets/img/Logo-Izipay-solo.png" alt="logo izipay" class="d-block mx-auto" height="80">
+        </div>
+
+        <div class="col-12">
+          <h1 class="mb-4">
+            <strong>Confirma tus datos de contacto</strong>
+          </h1>
+        </div>
+
+        <div class="col-12">
+          <div [formGroup]="form" class="row mb-2">
+            <div class="col-md-12 ">
+              <mat-form-field class="w-100">
+                <mat-label>Número de WhatAapp</mat-label>
+                <input matInput type="text" formControlName="number" mask="(000) 000-0000" placeholder="(000) 000-0000">
+                <button *ngIf="number?.value" matSuffix mat-icon-button aria-label="Clear"
+                  (click)="resetField('number')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-2">
+              <mat-form-field class="w-100">
+                <mat-label>Correo electrónico</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="example@gmail.com">
+                <button *ngIf="email?.value" matSuffix mat-icon-button aria-label="Clear" (click)="resetField('email')">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12 mb-2 d-flex">
+              <mat-checkbox class="me-2" formControlName="terminos"></mat-checkbox>
+              <label for="">
+                Al hacer clic en continuar,
+                <a href="https://www.youtube.com/watch?v=gp2VYMY8_X0" class="underline text-sky-500">
+                  autorizas el tratamiento de tus datos personales
+                </a>
+                según nuestra
+                <a href="https://www.youtube.com/watch?v=gp2VYMY8_X0" class="underline text-sky-500">
+                  política de privacidad
+                </a>
+                . Consultar tu historial de crédito es un paso indispensable en tu proceso de aprobación.
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-6 mx-auto">
+          <button class="w-100 rounded-pill mb-2" mat-raised-button color="primary">Continuar</button>
+          <button class="w-100 rounded-pill" mat-button color="primary" routerLink="/verifica-tus-datos">Volver</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
