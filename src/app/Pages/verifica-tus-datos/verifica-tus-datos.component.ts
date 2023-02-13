@@ -65,6 +65,12 @@ export class VerificaTusDatosComponent implements OnInit, AfterViewInit {
     
   }
 
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.visible = true;
+    }, 0);
+  }
+
   next(){
     this.globalService.cleanForm(this.form);
     this.globalService.formTouched(this.form);
@@ -82,11 +88,7 @@ export class VerificaTusDatosComponent implements OnInit, AfterViewInit {
     }
   }
   
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.visible = true;
-    },0);
-  }
+  
 
   get animation() {
     // Retornar valores para animacion para el Button-Right

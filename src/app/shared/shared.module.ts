@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertComponent } from './components/alert/alert.component';
+import { CardIdComponent } from './components/card-id/card-id.component';
 
 const COMPONENTS = [
-  AlertComponent
+  AlertComponent,
+  CardIdComponent
 ]
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ],
   imports: [
     CommonModule,

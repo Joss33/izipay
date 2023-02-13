@@ -17,7 +17,7 @@
         </div>
 
         <form class="col-12" [formGroup]="form">
-          <div class="bynw-card-id position-relative shadow p-4 mb-4" [ngClass]="{'d-none': frontOrBack}">
+          <div class="bynw-card-id position-relative shadow p-4 mb-4">
 
             <ng-container formGroupName="front">
               <div class="row">
@@ -59,7 +59,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-auto d-flex align-items-center justify-content-center">
+                <div class="col-auto d-flex align-items-center justify-content-center ">
                   <div style="border: 0.25rem solid #F59F5C; background-color: #FEDAC0; width: 4rem; height: 4rem;"
                     class="rounded text-white d-flex align-items-center justify-content-center">
                     <fa-icon [icon]="['fas','user']" style="font-size: 3rem;"></fa-icon>
@@ -69,7 +69,7 @@
             </ng-container>
 
           </div>
-          <div class="bynw-card-id position-relative shadow p-4 mb-4" [ngClass]="{'d-none': !frontOrBack}">
+          <div class="bynw-card-id position-relative shadow p-4 mb-4">
 
             <ng-container formGroupName="back">
               <div class="row">

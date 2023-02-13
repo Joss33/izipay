@@ -9,3 +9,10 @@
   border-style: solid;
   border-width: 0.25rem;
 }
+
+.rotateFadeOut{
+  animation-name: rotateFadeOut;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  
+}
