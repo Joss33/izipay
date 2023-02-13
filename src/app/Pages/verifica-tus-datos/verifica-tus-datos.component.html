@@ -17,7 +17,7 @@
         </div>
 
         <form class="col-12" [formGroup]="form">
-          <div class="bynw-card-id position-relative shadow p-4 mb-4">
+          <div class="bynw-card-id position-relative shadow p-4 mb-4" *ngIf="!frontOrBack">
 
             <ng-container formGroupName="front">
               <div class="row">
@@ -43,7 +43,7 @@
                       <mat-form-field class="izi-white w-100">
                         <mat-label>Número de documento</mat-label>
                         <input matInput type="text" formControlName="documentNumber" class="text-white" maxlength="15"
-                          placeholder="000.000.000" inputmode="numeric" [mask]="'^[0-9]+$'">
+                          placeholder="000.000.000" inputmode="numeric">
                         <button *ngIf="documentNumber?.value" matSuffix mat-icon-button aria-label="Clear">
                           <mat-icon>close</mat-icon>
                         </button>
@@ -53,7 +53,7 @@
                       <mat-form-field class="izi-white w-100">
                         <mat-label>Tu primer apellido</mat-label>
                         <input matInput type="text" formControlName="surname" class="text-white" maxlength="20"
-                          placeholder="Ramirez" [mask]="'^[A-Z|a-z]+$'">
+                          placeholder="Ramirez">
                         <button *ngIf="surname?.value" matSuffix mat-icon-button aria-label="Clear">
                           <mat-icon>close</mat-icon>
                         </button>
@@ -71,7 +71,7 @@
             </ng-container>
 
           </div>
-          <div class="bynw-card-id position-relative shadow p-4 mb-4">
+          <div class="bynw-card-id position-relative shadow p-4 mb-4" *ngIf="frontOrBack">
 
             <ng-container formGroupName="back">
               <div class="row">
@@ -149,3 +149,11 @@
     </div>
   </div>
 </div>
+
+
+<!-- <div class="scene scene--card">
+  <div class="card" [ngClass]="{'is-flipped': toggle}" (click)="toggle = !toggle">
+    <div class="card__face card__face--front">front</div>
+    <div class="card__face card__face--back">back</div>
+  </div>
+</div> -->

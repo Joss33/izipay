@@ -33,12 +33,13 @@ export class VerificaTusDatosComponent implements OnInit, AfterViewInit {
   position: 'right' = 'right';
 
   visible: boolean = false;
+  toggle: boolean = false;
 
   frontOrBack = false;
   
   form: FormGroup = this.formBuilder.group({
     front: this.formBuilder.group({
-      documentNumber: [null, [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
+      documentNumber: [null, [Validators.required, Validators.minLength(7), Validators.maxLength(15 )]],
       surname: [null, Validators.required]
     }),
     back: this.formBuilder.group({

@@ -41,10 +41,15 @@ export class ConfirmaTusDatosDeContactoComponent implements OnInit {
   next(){
     this.globalService.cleanForm(this.form);
     this.globalService.formTouched(this.form);
+    let message = '';
     if(this.form.valid){
       this._snackBar.open('Hemos enviado tu solicitud', 'Cerrar');
     }else{
-      this._snackBar.open('Todos los campos son obligatorios, intente de nuevo', 'Cerrar');
+      message = 'Todos los campos son obligatorios, intente de nuevo';
+      if(this.email?.invalid){
+        message = 'El correo electrónico no cuenta con el formato correspondiente'
+      }
+      this._snackBar.open(message, 'Cerrar');
     }
   }
 
