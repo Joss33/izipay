@@ -38,7 +38,7 @@ export class VerificaTusDatosComponent implements OnInit, AfterViewInit {
   
   form: FormGroup = this.formBuilder.group({
     front: this.formBuilder.group({
-      documentNumber: [null, Validators.required],
+      documentNumber: [null, [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
       surname: [null, Validators.required]
     }),
     back: this.formBuilder.group({

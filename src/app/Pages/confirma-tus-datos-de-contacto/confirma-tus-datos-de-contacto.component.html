@@ -18,7 +18,8 @@
             <div class="col-md-12 ">
               <mat-form-field class="w-100">
                 <mat-label>Número de WhatAapp</mat-label>
-                <input matInput type="text" formControlName="number" mask="(000) 000-0000" placeholder="(000) 000-0000">
+                <input matInput type="text" formControlName="number" mask="(000) 000-0000" placeholder="(000) 000-0000"
+                  maxlength="15" inputmode="numeric" [mask]="'^[0-9]+$'">
                 <button *ngIf="number?.value" matSuffix mat-icon-button aria-label="Clear"
                   (click)="resetField('number')">
                   <mat-icon>close</mat-icon>

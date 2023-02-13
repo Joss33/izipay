@@ -6,8 +6,6 @@ import { ConfirmaTusDatosDeContactoComponent } from './confirma-tus-datos-de-con
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
-import { NgxMaskModule, IConfig } from 'ngx-mask';  
-
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,7 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     FormsModule,
     MatCheckboxModule,
     MatSnackBarModule,
-    NgxMaskModule.forRoot(),
+    NgxMaskModule.forRoot(maskConfig),
   ]
 })
 export class ConfirmaTusDatosDeContactoModule { }

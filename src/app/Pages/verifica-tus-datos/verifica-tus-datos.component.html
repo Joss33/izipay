@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12 px-0 col-lg-6 mt-5 mx-auto">
+    <div class="col-md-12 col-lg-6 mt-5 mx-auto">
       <div class="row mx-auto">
 
         <div class="col-md-12 mb-2">
@@ -42,7 +42,8 @@
                     <div class="col-12">
                       <mat-form-field class="izi-white w-100">
                         <mat-label>Número de documento</mat-label>
-                        <input matInput type="text" formControlName="documentNumber" class="text-white">
+                        <input matInput type="text" formControlName="documentNumber" class="text-white" maxlength="15"
+                          placeholder="000.000.000" inputmode="numeric" [mask]="'^[0-9]+$'">
                         <button *ngIf="documentNumber?.value" matSuffix mat-icon-button aria-label="Clear">
                           <mat-icon>close</mat-icon>
                         </button>
@@ -51,7 +52,8 @@
                     <div class="col-12">
                       <mat-form-field class="izi-white w-100">
                         <mat-label>Tu primer apellido</mat-label>
-                        <input matInput type="text" formControlName="surname" class="text-white">
+                        <input matInput type="text" formControlName="surname" class="text-white" maxlength="20"
+                          placeholder="Ramirez" [mask]="'^[A-Z|a-z]+$'">
                         <button *ngIf="surname?.value" matSuffix mat-icon-button aria-label="Clear">
                           <mat-icon>close</mat-icon>
                         </button>

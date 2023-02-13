@@ -19,6 +19,12 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import { faFingerprint as fasFingerprint, faUser as fasUser  } from '@fortawesome/pro-solid-svg-icons';
 
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+
 @NgModule({
   declarations: [
     VerificaTusDatosComponent
@@ -34,7 +40,8 @@ import { faFingerprint as fasFingerprint, faUser as fasUser  } from '@fortawesom
     MatDatepickerModule,
     MatNativeDateModule,
     FontAwesomeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxMaskModule.forRoot(maskConfig)
   ]
 })
 export class VerificaTusDatosModule {
